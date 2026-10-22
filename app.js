@@ -23,7 +23,7 @@
   // 1. THEME ENGINE: LIGHT & CHERRY BLOSSOM AT NIGHT
   // ---------------------------------------------------------------------------
   const THEME_STORAGE_KEY = 'trizy_portfolio_theme';
-  const themeToggleBtn = document.getElementById('themeToggle')
+  const themeToggleBtn = document.getElementById('themeToggle');
   const thumbIcon = document.getElementById('thumbIcon');
   const htmlElement = document.documentElement;
   const bodyElement = document.body;
