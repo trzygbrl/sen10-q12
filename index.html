@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trizy | AUF Undergraduate & Tech Enthusiast</title>
+  <meta name="description" content="Personal portfolio of Trizy - AUF Undergraduate, Data Science & Machine Learning Enthusiast, Violinist, and Creator from San Fernando, Pampanga.">
+
+  <!-- Google Fonts: Quicksand & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+</head>
+<body>
+  <!-- Canvas for Sparkles & Cherry Blossom Petals -->
+  <canvas id="sparkleCanvas" class="sparkle-canvas"></canvas>
+
+  <!-- Ambient Background Glow Elements -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+
+  <!-- Header / Fixed Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Trizy's Home">
+        <span class="brand-icon">🌸</span>
+        <span class="brand-text">Trizy<span class="accent-dot">.</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#interests" class="nav-link">My World</a>
+        <a href="#skills-projects" class="nav-link">Skills & Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Cute Theme Toggle Button -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle cherry blossom theme" title="Toggle Theme">
+          <span class="toggle-track">
+            <span class="toggle-sun-flower" aria-hidden="true">🌸</span>
+            <span class="toggle-moon-sparkle" aria-hidden="true">🌙</span>
+            <span class="toggle-thumb">
+              <span class="thumb-icon" id="thumbIcon">🌸</span>
+            </span>
+          </span>
+        </button>
+
+        <!-- Mobile Navigation Menu Toggle -->
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-sparkle">✨</span>
+            <span>Welcome to my cozy digital sanctuary</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="highlight-name">Trizy!</span>
+            <span class="wave-emoji" aria-hidden="true">👋</span>
+          </h1>
+
+          <h2 class="hero-subtitle">
+            <span class="static-prefix">I am an </span>
+            <span class="typing-text" id="typingText"></span>
+            <span class="typing-cursor" aria-hidden="true">|</span>
+          </h2>
+
+          <p class="hero-description">
+            Weaving analytical thinking and machine learning with the soul and harmony of a violinist. Rooted in <strong>San Fernando, Pampanga</strong>, I strive to build thoughtful technology while nurturing creativity across music, games, and art.
+          </p>
+
+          <div class="hero-actions">
+            <button id="sparkleBtn" class="btn btn-primary btn-sparkle" aria-label="Trigger confetti sparkle effect">
+              <span class="btn-icon">✨</span>
+              <span>Send Sparkles!</span>
+              <span class="sparkle-counter" id="sparkleCounter" title="Sparkles sent">🌸</span>
+            </button>
+            <a href="#about" class="btn btn-secondary">
+              <span>Get to Know Me</span>
+              <span class="arrow-icon">↓</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">AUF</span>
+              <span class="stat-label">Undergraduate</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">🎻 + 💻</span>
+              <span class="stat-label">Art & Tech</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">PH</span>
+              <span class="stat-label">Pampanga Roots</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="avatar-wrapper">
+            <div class="avatar-ring-outer"></div>
+            <div class="avatar-ring-inner"></div>
+            <div class="avatar-frame">
+              <img src="avatar.jpg" alt="Portrait illustration of Trizy holding a violin bow with soft cherry blossoms" class="avatar-img" width="340" height="340">
+            </div>
+
+            <!-- Floating Decorative Badges -->
+            <div class="floating-badge badge-top-left" aria-hidden="true">
+              <span class="badge-icon">🎻</span>
+              <span class="badge-text">Violin Player</span>
+            </div>
+
+            <div class="floating-badge badge-bottom-right" aria-hidden="true">
+              <span class="badge-icon">🤖</span>
+              <span class="badge-text">ML & Data Science</span>
+            </div>
+
+            <div class="floating-badge badge-top-right" aria-hidden="true">
+              <span class="badge-icon">📍</span>
+              <span class="badge-text">San Fernando, Pampanga</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">✨ Warm Introduction</span>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-lead">A harmonious blend of academic curiosity, analytical problem-solving, and creative rhythm.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card primary-card">
+            <div class="card-icon-bubble">🌸</div>
+            <h3 class="card-title">Roots in San Fernando, Pampanga</h3>
+            <p class="card-text">
+              Born and raised in the heart of Pampanga, known for its deep culinary traditions, rich cultural warmth, and vibrant community spirit. Growing up here instilled in me a strong sense of grounded hospitality, perseverance, and passion for continuous learning.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <div class="card-icon-bubble">⚖️</div>
+            <h3 class="card-title">Balancing Academia & Artistry</h3>
+            <p class="card-text">
+              As an undergraduate at <strong>Angeles University Foundation (AUF)</strong>, I spend my days exploring data architectures, algorithm optimizations, and machine learning models. But when the screens dim, I pick up my violin or delve into musical theatre—finding the exact same beauty in the cadence of a melody as I do in the logic of an elegant algorithm.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <div class="card-icon-bubble">💡</div>
+            <h3 class="card-title">My Philosophy</h3>
+            <p class="card-text">
+              I believe the most impactful technology is built with emotional intelligence, keen aesthetics, and human empathy. My goal is to leverage data science to solve real human problems without ever losing touch with the creative spark that makes us uniquely human.
+            </p>
+          </div>
+        </div>
+
+        <!-- Highlights Row -->
+        <div class="about-highlights">
+          <div class="highlight-chip">
+            <span class="chip-emoji">🎓</span>
+            <div>
+              <strong>Angeles University Foundation</strong>
+              <small>Undergraduate Studies</small>
+            </div>
+          </div>
+          <div class="highlight-chip">
+            <span class="chip-emoji">📍</span>
+            <div>
+              <strong>San Fernando, Pampanga</strong>
+              <small>Hometown & Roots</small>
+            </div>
+          </div>
+          <div class="highlight-chip">
+            <span class="chip-emoji">🎶</span>
+            <div>
+              <strong>Violinist & Vocalist</strong>
+              <small>Creative Expression</small>
+            </div>
+          </div>
+          <div class="highlight-chip">
+            <span class="chip-emoji">⚡</span>
+            <div>
+              <strong>Hackathon Competitor</strong>
+              <small>AXIS: HackFest & HackIT</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My World (Hobbies & Interests) Section -->
+    <section class="section interests-section" id="interests">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">💖 Life Outside The Terminal</span>
+          <h2 class="section-title">My World</h2>
+          <p class="section-lead">The cozy passions, artistic rhythms, and playful pastimes that keep me inspired and energized.</p>
+        </div>
+
+        <div class="interests-grid">
+          <!-- Interest 1: Playing the Violin -->
+          <div class="interest-card" data-tilt>
+            <div class="interest-header">
+              <div class="interest-emoji-box">🎻</div>
+              <span class="interest-category">Music & Soul</span>
+            </div>
+            <h3 class="interest-title">Playing the Violin</h3>
+            <p class="interest-description">
+              The violin has been my truest expressive outlet. From mastering bow dynamics to exploring rich vibrato, every piece teaches deep patience, muscle memory, and emotional phrasing.
+            </p>
+            <div class="interest-footer">
+              <span class="interest-pill">Acoustic Strings</span>
+              <span class="interest-pill">Classical & Contemporary</span>
+            </div>
+          </div>
+
+          <!-- Interest 2: Singing & Theatre -->
+          <div class="interest-card" data-tilt>
+            <div class="interest-header">
+              <div class="interest-emoji-box">🎭</div>
+              <span class="interest-category">Performance</span>
+            </div>
+            <h3 class="interest-title">Singing & Theatre</h3>
+            <p class="interest-description">
+              Stepping onto the stage or singing along to Broadway tunes brings stories alive. Theatre has cultivated my public speaking confidence, empathy, and collaborative spirit.
+            </p>
+            <div class="interest-footer">
+              <span class="interest-pill">Musical Theatre</span>
+              <span class="interest-pill">Vocal Harmony</span>
+            </div>
+          </div>
+
+          <!-- Interest 3: Yoga & Pilates -->
+          <div class="interest-card" data-tilt>
+            <div class="interest-header">
+              <div class="interest-emoji-box">🧘‍♀️</div>
+              <span class="interest-category">Wellness & Focus</span>
+            </div>
+            <h3 class="interest-title">Yoga & Pilates</h3>
+            <p class="interest-description">
+              After hours of coding and studying, mindful flows, core stabilization, and deep stretches restore clarity and posture. It's my daily meditation for mental grounding.
+            </p>
+            <div class="interest-footer">
+              <span class="interest-pill">Mindful Movement</span>
+              <span class="interest-pill">Core Strength</span>
+            </div>
+          </div>
+
+          <!-- Interest 4: Reading Manhwa -->
+          <div class="interest-card" data-tilt>
+            <div class="interest-header">
+              <div class="interest-emoji-box">📖</div>
+              <span class="interest-category">Stories & Art</span>
+            </div>
+            <h3 class="interest-title">Reading Manhwa</h3>
+            <p class="interest-description">
+              Diving into beautifully illustrated Korean webtoons—from captivating historical fantasy and royal romances to witty slice-of-life tales. Perfect pairing with a cup of matcha latte!
+            </p>
+            <div class="interest-footer">
+              <span class="interest-pill">Webtoons</span>
+              <span class="interest-pill">Visual Storytelling</span>
+            </div>
+          </div>
+
+          <!-- Interest 5: Video Games -->
+          <div class="interest-card interest-card-wide" data-tilt>
+            <div class="interest-header">
+              <div class="interest-emoji-box">🎮</div>
+              <span class="interest-category">Gaming & Strategy</span>
+            </div>
+            <h3 class="interest-title">Video Games</h3>
+            <p class="interest-description">
+              Balancing tactical planning with cozy downtime! I love theorycrafting board compositions and economy management in <strong>Teamfight Tactics (TFT)</strong>, as well as relaxing and building cozy social sanctuaries in <strong>Heartopia</strong>.
+            </p>
+            <div class="interest-footer">
+              <span class="interest-pill">Teamfight Tactics (TFT)</span>
+              <span class="interest-pill">Heartopia</span>
+              <span class="interest-pill">Cozy & Strategy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Projects Section -->
+    <section class="section skills-projects-section" id="skills-projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">💻 Technical Toolkit & Experiences</span>
+          <h2 class="section-title">Skills & Projects</h2>
+          <p class="section-lead">Transforming curiosity and analytical rigor into practical models, algorithms, and hackathon prototypes.</p>
+        </div>
+
+        <!-- Skills Cloud -->
+        <div class="skills-showcase">
+          <h3 class="showcase-subtitle">Core Technologies & Tools</h3>
+          <div class="tags-container">
+            <span class="tech-tag" data-tag="python">
+              <span class="tag-icon">🐍</span> Python
+            </span>
+            <span class="tech-tag" data-tag="ml">
+              <span class="tag-icon">🧠</span> Machine Learning
+            </span>
+            <span class="tech-tag" data-tag="datascience">
+              <span class="tag-icon">📊</span> Data Science
+            </span>
+            <span class="tech-tag" data-tag="git">
+              <span class="tag-icon">🌿</span> Git & GitHub
+            </span>
+            <span class="tech-tag" data-tag="stats">
+              <span class="tag-icon">📈</span> Statistical Modeling
+            </span>
+            <span class="tech-tag" data-tag="data-analysis">
+              <span class="tag-icon">🔍</span> Exploratory Data Analysis
+            </span>
+            <span class="tech-tag" data-tag="sql">
+              <span class="tag-icon">🗄️</span> SQL & Databases
+            </span>
+            <span class="tech-tag" data-tag="web">
+              <span class="tag-icon">🌐</span> HTML5 & Vanilla CSS / JS
+            </span>
+            <span class="tech-tag" data-tag="viz">
+              <span class="tag-icon">🎨</span> Data Visualization
+            </span>
+          </div>
+        </div>
+
+        <!-- Projects & Hackathons Grid -->
+        <div class="projects-grid">
+          <!-- Project 1: AXIS: HackFest -->
+          <article class="project-card">
+            <div class="project-badge-bar">
+              <span class="hackathon-badge">🏆 Hackathon Experience</span>
+              <span class="project-year">AXIS: HackFest</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">AXIS: HackFest Innovation Challenge</h3>
+              <p class="project-desc">
+                Collaborated in a fast-paced, multi-disciplinary hackathon sprint to engineer data-backed solutions. Focused on translating complex data patterns into actionable insights, rapid prototyping, and communicating technical value under strict deadlines.
+              </p>
+              <div class="project-tech-stack">
+                <span class="stack-badge">Python</span>
+                <span class="stack-badge">Data Science</span>
+                <span class="stack-badge">Rapid Prototyping</span>
+                <span class="stack-badge">Git</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-status">✨ Collaborative Sprint</span>
+              <a href="https://github.com/trzygbrl" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+                View Repositories ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: HackIT -->
+          <article class="project-card">
+            <div class="project-badge-bar">
+              <span class="hackathon-badge">🚀 Hackathon Experience</span>
+              <span class="project-year">HackIT</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">HackIT Tech Sprint</h3>
+              <p class="project-desc">
+                Engineered an end-to-end prototype tackling real-world community challenges. Balanced algorithm design, data pipeline sanitization, and intuitive interface workflows, demonstrating strong team synergy and agility under competitive pressure.
+              </p>
+              <div class="project-tech-stack">
+                <span class="stack-badge">Machine Learning</span>
+                <span class="stack-badge">Python</span>
+                <span class="stack-badge">UI Prototyping</span>
+                <span class="stack-badge">Teamwork</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-status">💡 Innovation & Impact</span>
+              <a href="https://github.com/trzygbrl" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+                View Repositories ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: Machine Learning & Data Explorations -->
+          <article class="project-card">
+            <div class="project-badge-bar">
+              <span class="hackathon-badge">📊 Academic & Personal</span>
+              <span class="project-year">AUF Labs</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Predictive Modeling & Feature Engineering</h3>
+              <p class="project-desc">
+                Investigating structured datasets through exploratory data analysis (EDA), statistical preprocessing, regression, and classification pipelines. Built to evaluate model metrics like precision, recall, and ROC curves for empirical decision-making.
+              </p>
+              <div class="project-tech-stack">
+                <span class="stack-badge">Data Science</span>
+                <span class="stack-badge">Machine Learning</span>
+                <span class="stack-badge">Model Evaluation</span>
+                <span class="stack-badge">Jupyter</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-status">🔬 Research & Analytics</span>
+              <a href="https://github.com/trzygbrl" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+                View Repositories ↗
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Sign-off Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-header">
+            <span class="section-tag">💌 Let's Connect</span>
+            <h2 class="contact-title">Say Hi or Collaborate!</h2>
+            <p class="contact-subtitle">
+              Whether you want to discuss machine learning ideas, talk violin repertoire, team up for a hackathon, or discuss TFT compositions—my inbox is always open!
+            </p>
+          </div>
+
+          <div class="contact-links">
+            <!-- GitHub Link -->
+            <a href="https://github.com/trzygbrl" target="_blank" rel="noopener noreferrer" class="contact-btn">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+              </span>
+              <span>GitHub (@trzygbrl)</span>
+            </a>
+
+            <!-- LinkedIn Link -->
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-btn">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </span>
+              <span>LinkedIn</span>
+            </a>
+
+            <!-- Email Link -->
+            <a href="mailto:trizy@example.com" class="contact-btn contact-btn-highlight">
+              <span class="contact-icon" aria-hidden="true">💌</span>
+              <span>Send an Email</span>
+            </a>
+          </div>
+
+          <div class="contact-signoff">
+            <p class="signoff-quote">"In every algorithm lies structure; in every melody lies heart."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <p class="footer-message">
+          Designed & coded with <span class="heart-pulse">🌸</span> and lots of curiosity by <strong>Trizy Gabriel</strong>
+        </p>
+        <p class="footer-location">
+          Rooted in San Fernando, Pampanga • Angeles University Foundation
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <button id="backToTop" class="back-to-top" aria-label="Scroll back to top" title="Back to top">
+          <span>↑ Back to Top</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
